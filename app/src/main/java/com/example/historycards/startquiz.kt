@@ -32,49 +32,39 @@ class startquiz : ComponentActivity() {
                 "The Second world war started in 1948", "Apartheid ended in 1992"
             )
             val answers = listOf("True", "False", "True", "False", "False")
+            var scorecard = listOf(0)
 
-            LazyColumn {
 
-                items(questions) {
-                    ListItem(it)
+
+            Text(text = "Click True or False")
+
+
+            Card(
+                modifier = Modifier.fillMaxSize()
+                    .padding(50.dp)
+            ) {
+
+                Text(
+                    text = questions[0],
+                    modifier = Modifier.padding(24.dp)
+                )
+
+                Row {
+                    Button(onClick = {
+                        
+                    }) {
+                        Text(text = "True")
+                    }
+
+
+                    Button(onClick = {}) {
+                        Text(text = "False")
+                    }
 
 
                 }
 
-
             }
-
-
-
-        }
-
-    }
-}
-@Composable
-fun ListItem(name: String) {
-
-    Card(
-        modifier = Modifier.fillMaxSize()
-            .padding(50.dp)
-    ) {
-
-        Text(
-            text = name,
-            modifier = Modifier.padding(24.dp)
-        )
-
-        Row {
-            Button(onClick = {}) {
-                Text(text = "True")
-            }
-
-
-            Button(onClick = {}) {
-                Text(text = "False")
-
-
-            }
-
         }
     }
 }
